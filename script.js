@@ -66,8 +66,10 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('yesBtn1').textContent = config.questions.first.yesBtn;
     document.getElementById('noBtn1').textContent = config.questions.first.noBtn;
     
-    const noBtn = document.getElementById("noBtn1");
-    moveButton(noBtn);
+    const noBtn1 = document.getElementById("noBtn1");
+    const noBtn3 = document.getElementById("noBtn3");
+    moveButton(noBtn1);
+    moveButton(noBtn3);
     
     // Set second question texts
     document.getElementById('question2Text').textContent = config.questions.second.text;
@@ -187,6 +189,24 @@ loveMeter.addEventListener('input', () => {
 // Initialize love meter
 window.addEventListener('DOMContentLoaded', setInitialPosition);
 window.addEventListener('load', setInitialPosition);
+
+// Show specific page
+function showPage(pageNumber) {
+
+    document.querySelectorAll(".page").forEach(page => {
+        page.style.display = "none";
+    });
+
+    document.getElementById("page" + pageNumber).style.display = "block";
+}
+
+// When user selects restaurant
+function selectPlace(placeName) {
+
+    document.getElementById("selectedPlace").innerText = placeName;
+
+    showPage(5); // go to confirmation page
+}
 
 // Celebration function
 function celebrate() {
