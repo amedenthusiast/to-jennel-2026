@@ -125,18 +125,24 @@ function showNextQuestion(questionNumber) {
 // Make a button escape when hovered
 function moveButton(button) {
 
-    button.addEventListener("mouseenter", () => {
+    button.style.position = "fixed";
+    button.style.zIndex = "9999";
+    button.style.transition = "none";   // disable animation glitch
 
-        const x = Math.random() * (window.innerWidth - button.offsetWidth);
-        const y = Math.random() * (window.innerHeight - button.offsetHeight);
+    button.addEventListener("mouseenter", function () {
 
-        button.style.position = "fixed";
-        button.style.left = x + "px";
-        button.style.top = y + "px";
+        const maxX = window.innerWidth - button.offsetWidth;
+        const maxY = window.innerHeight - button.offsetHeight;
+
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+
+        button.style.left = randomX + "px";
+        button.style.top = randomY + "px";
+
     });
 
 }
-
 
 // Love meter functionality
 const loveMeter = document.getElementById('loveMeter');
