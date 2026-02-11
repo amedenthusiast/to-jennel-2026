@@ -113,6 +113,10 @@ body {
     margin-right: 100px;   /* pushes Yes slightly left */
 }
 
+#question1 .cute-btn,
+#question3 .cute-btn {
+    margin: 10px 8px;   /* controls spacing between Yes & No */
+}
 
 .love-meter {
     position: relative;
