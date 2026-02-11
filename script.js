@@ -195,7 +195,11 @@ function selectPlace(placeName) {
 
     document.getElementById("selectedPlace").innerText = placeName;
 
-    showNextQuestion(5);
+    // Hide all question sections
+    document.querySelectorAll('.question-section').forEach(q => q.classList.add('hidden'));
+
+    // Show celebration page
+    document.getElementById('celebration').classList.remove('hidden');
 }
 
 // Celebration function
