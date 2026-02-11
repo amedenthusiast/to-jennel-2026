@@ -110,7 +110,7 @@ body {
 
 #yesBtn1,
 #yesBtn3 {
-    margin-right: 100px;   /* pushes Yes slightly left */
+    transform: translateX(-40px);
 }
 
 #question1 .cute-btn,
