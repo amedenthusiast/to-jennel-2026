@@ -197,7 +197,7 @@ function showPage(pageNumber) {
         page.style.display = "none";
     });
 
-    document.getElementById("page" + pageNumber).style.display = "block";
+    document.getElementById("question" + pageNumber).style.display = "block";
 }
 
 // When user selects restaurant
