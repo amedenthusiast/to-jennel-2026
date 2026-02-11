@@ -66,11 +66,6 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('yesBtn1').textContent = config.questions.first.yesBtn;
     document.getElementById('noBtn1').textContent = config.questions.first.noBtn;
     
-    const noBtn1 = document.getElementById("noBtn1");
-    const noBtn3 = document.getElementById("noBtn3");
-    moveButton(noBtn1);
-    moveButton(noBtn3);
-    
     // Set second question texts
     document.getElementById('question2Text').textContent = config.questions.second.text;
     document.getElementById('startText').textContent = config.questions.second.startText;
@@ -81,6 +76,11 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('yesBtn3').textContent = config.questions.third.yesBtn;
     document.getElementById('noBtn3').textContent = config.questions.third.noBtn;
 
+    // Apply escape AFTER elements exist
+    moveButton(document.getElementById("noBtn1"));
+    moveButton(document.getElementById("noBtn3"));
+
+    
     // Create initial floating elements
     createFloatingElements();
 
@@ -190,22 +190,12 @@ loveMeter.addEventListener('input', () => {
 window.addEventListener('DOMContentLoaded', setInitialPosition);
 window.addEventListener('load', setInitialPosition);
 
-// Show specific page
-function showPage(pageNumber) {
-
-    document.querySelectorAll(".page").forEach(page => {
-        page.style.display = "none";
-    });
-
-    document.getElementById("question" + pageNumber).style.display = "block";
-}
-
 // When user selects restaurant
 function selectPlace(placeName) {
 
     document.getElementById("selectedPlace").innerText = placeName;
 
-    showPage(5); // go to confirmation page
+    showNextQuestion(5);
 }
 
 // Celebration function
