@@ -120,13 +120,21 @@ function showNextQuestion(questionNumber) {
     document.getElementById(`question${questionNumber}`).classList.remove('hidden');
 }
 
-// Function to move the "No" button when clicked
+// Function to make the "No" button move when hovered
 function moveButton(button) {
-    const x = Math.random() * (window.innerWidth - button.offsetWidth);
-    const y = Math.random() * (window.innerHeight - button.offsetHeight);
-    button.style.position = 'fixed';
-    button.style.left = x + 'px';
-    button.style.top = y + 'px';
+
+    // Ensure it only attaches once
+    if (button.dataset.hoverEnabled) return;
+    button.dataset.hoverEnabled = "true";
+
+    button.addEventListener("mouseenter", () => {
+        const x = Math.random() * (window.innerWidth - button.offsetWidth);
+        const y = Math.random() * (window.innerHeight - button.offsetHeight);
+
+        button.style.position = "fixed";
+        button.style.left = x + "px";
+        button.style.top = y + "px";
+    });
 }
 
 // Love meter functionality
