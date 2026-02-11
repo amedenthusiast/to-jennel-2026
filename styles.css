@@ -108,14 +108,9 @@ body {
     animation: none;
 }
 
-.question-section button {
-    margin: 10px;
-}
-
 #yesBtn1,
 #yesBtn3 {
-    position: relative;
-    left: -40px;   /* move slightly to the left */
+    margin-right: 40px;   /* pushes Yes slightly left */
 }
 
 
