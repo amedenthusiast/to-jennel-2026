@@ -194,7 +194,7 @@ window.addEventListener('load', setInitialPosition);
 function selectPlace(placeName) {
 
     document.getElementById("selectedPlace").innerText =
-        "Our date will be at " + placeName + " ❤️";
+        placeName;
 
     celebrate();
 }
