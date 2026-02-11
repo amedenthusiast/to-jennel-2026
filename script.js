@@ -193,13 +193,10 @@ window.addEventListener('load', setInitialPosition);
 // When user selects restaurant
 function selectPlace(placeName) {
 
-    document.getElementById("selectedPlace").innerText = placeName;
+    document.getElementById("selectedPlace").innerText =
+        "Our date will be at " + placeName + " ❤️";
 
-    // Hide all question sections
-    document.querySelectorAll('.question-section').forEach(q => q.classList.add('hidden'));
-
-    // Show celebration page
-    document.getElementById('celebration').classList.remove('hidden');
+    celebrate();
 }
 
 // Celebration function
